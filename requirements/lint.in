@@ -1,0 +1,5 @@
+pip-tools
+pip-sync-faster
+-r tests.txt
+-r functests.txt
+ruff
