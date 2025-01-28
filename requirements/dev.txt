@@ -4,12 +4,42 @@
 #
 #    pip-compile --allow-unsafe requirements/dev.in
 #
+amqp==5.3.1
+    # via
+    #   -r requirements/prod.txt
+    #   kombu
 asttokens==3.0.0
     # via stack-data
+billiard==4.2.1
+    # via
+    #   -r requirements/prod.txt
+    #   celery
 build==1.2.2.post1
     # via pip-tools
+celery==5.4.0
+    # via
+    #   -r requirements/prod.txt
+    #   flower
 click==8.1.8
-    # via pip-tools
+    # via
+    #   -r requirements/prod.txt
+    #   celery
+    #   click-didyoumean
+    #   click-plugins
+    #   click-repl
+    #   pip-tools
+click-didyoumean==0.3.1
+    # via
+    #   -r requirements/prod.txt
+    #   celery
+click-plugins==1.1.1
+    # via
+    #   -r requirements/prod.txt
+    #   celery
+click-repl==0.3.0
+    # via
+    #   -r requirements/prod.txt
+    #   celery
 decorator==5.1.1
     # via ipython
 executing==2.2.0
@@ -18,12 +48,22 @@ factory-boy==3.3.1
     # via -r requirements/dev.in
 faker==35.0.0
     # via factory-boy
+flower==2.0.1
+    # via -r requirements/prod.txt
+humanize==4.11.0
+    # via
+    #   -r requirements/prod.txt
+    #   flower
 importlib-metadata==8.6.1
     # via pip-sync-faster
 ipython==8.31.0
     # via -r requirements/dev.in
 jedi==0.19.2
     # via ipython
+kombu==5.4.2
+    # via
+    #   -r requirements/prod.txt
+    #   celery
 matplotlib-inline==0.1.7
     # via ipython
 packaging==24.2
@@ -38,8 +78,15 @@ pip-tools==7.4.1
     # via
     #   -r requirements/dev.in
     #   pip-sync-faster
+prometheus-client==0.21.1
+    # via
+    #   -r requirements/prod.txt
+    #   flower
 prompt-toolkit==3.0.50
-    # via ipython
+    # via
+    #   -r requirements/prod.txt
+    #   click-repl
+    #   ipython
 ptyprocess==0.7.0
     # via pexpect
 pure-eval==0.2.3
@@ -51,21 +98,47 @@ pyproject-hooks==1.2.0
     #   build
     #   pip-tools
 python-dateutil==2.9.0.post0
-    # via faker
+    # via
+    #   -r requirements/prod.txt
+    #   celery
+    #   faker
+pytz==2024.2
+    # via
+    #   -r requirements/prod.txt
+    #   flower
 six==1.17.0
-    # via python-dateutil
+    # via
+    #   -r requirements/prod.txt
+    #   python-dateutil
 stack-data==0.6.3
     # via ipython
 supervisor==4.2.5
     # via -r requirements/dev.in
+tornado==6.4.2
+    # via
+    #   -r requirements/prod.txt
+    #   flower
 traitlets==5.14.3
     # via
     #   ipython
     #   matplotlib-inline
 typing-extensions==4.12.2
     # via faker
+tzdata==2025.1
+    # via
+    #   -r requirements/prod.txt
+    #   celery
+    #   kombu
+vine==5.1.0
+    # via
+    #   -r requirements/prod.txt
+    #   amqp
+    #   celery
+    #   kombu
 wcwidth==0.2.13
-    # via prompt-toolkit
+    # via
+    #   -r requirements/prod.txt
+    #   prompt-toolkit
 wheel==0.45.1
     # via pip-tools
 zipp==3.21.0
