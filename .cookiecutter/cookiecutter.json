@@ -35,7 +35,6 @@
     "__scheduled_workflows": "",
     "__slack_notifications_workflows": "",
     "__docker_hub_application_name": "",
-    "_repo_dir": "/Users/seanh/.cookiecutters/cookiecutters/pyapp",
     "_checkout": null
   }
 }
