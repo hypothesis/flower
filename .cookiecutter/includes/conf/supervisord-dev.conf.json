@@ -1,0 +1,8 @@
+{
+  "programs": {
+    "flower": {
+        "command": "celery --broker='%(ENV_BROKER_URL)s' flower --port=5555"
+    }
+  }
+}
+
