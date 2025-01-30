@@ -16,7 +16,8 @@
     "Makefile",
     "tox.ini",
     "flower/*",
-    "tests/*"
+    "tests/*",
+    "Dockerfile"
   ],
   "extra_context": {
     "name": "Flower",
