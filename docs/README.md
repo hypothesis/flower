@@ -1,7 +1,7 @@
 <a href="https://github.com/hypothesis/flower/blob/main/.python-version"><img src="https://img.shields.io/badge/python-3.12-success"></a>
 <a href="https://github.com/hypothesis/flower/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-BSD--2--Clause-success"></a>
 <a href="https://github.com/hypothesis/cookiecutters/tree/main/pyapp"><img src="https://img.shields.io/badge/cookiecutter-pyapp-success"></a>
-<a href="https://github.com/hypothesis/flower/tree/main/docs"><img src="https://img.shields.io/badge/docs-✓-brightgreen"></a>
+<a href="https://github.com/hypothesis/flower/tree/main/docs"><img src="https://img.shields.io/badge/docs-✓-success"></a>
 
 # Flower
 
