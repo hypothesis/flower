@@ -8,29 +8,43 @@
 
 A [Flower](https://flower.readthedocs.io/) instance for Hypothesis, for monitoring and managing our Celery workers and tasks.
 
-## Setting up Your Flower Development Environment
+    ## Setting up Your Flower Development Environment
 
-First you'll need to install:
+    First you'll need to install:
 
-* [Git](https://git-scm.com/).
-  On Ubuntu: `sudo apt install git`, on macOS: `brew install git`.
-* [GNU Make](https://www.gnu.org/software/make/).
-  This is probably already installed, run `make --version` to check.
-* [pyenv](https://github.com/pyenv/pyenv).
-  Follow the instructions in pyenv's README to install it.
-  The **Homebrew** method works best on macOS.
-  The **Basic GitHub Checkout** method works best on Ubuntu.
-  You _don't_ need to set up pyenv's shell integration ("shims"), you can
-  [use pyenv without shims](https://github.com/pyenv/pyenv#using-pyenv-without-shims).
+    * [Git](https://git-scm.com/).
+      On Ubuntu: `sudo apt install git`, on macOS: `brew install git`.
+    * [GNU Make](https://www.gnu.org/software/make/).
+      This is probably already installed, run `make --version` to check.
+    * [pyenv](https://github.com/pyenv/pyenv).
+      Follow the instructions in pyenv's README to install it.
+      The **Homebrew** method works best on macOS.
+      The **Basic GitHub Checkout** method works best on Ubuntu.
+      You _don't_ need to set up pyenv's shell integration ("shims"), you can
+      [use pyenv without shims](https://github.com/pyenv/pyenv#using-pyenv-without-shims).
 
-Then to set up your development environment:
+    Then to set up your development environment:
 
-```terminal
-git clone https://github.com/hypothesis/flower.git
-cd flower
-make devdata
-make help
-```
+    ```terminal
+    git clone https://github.com/hypothesis/flower.git
+    cd flower
+    make devdata
+    make help
+    ```
+
+
+A Flower instance can only connect to one RabbitMQ instance,
+but in the development environment h, Checkmate and LMS each have their own RabbitMQ instances.
+So in the development environment `make dev` launches three separate Flower instances:
+
+* http://localhost:5555/ for a Flower instance connected to h's RabbitMQ
+* http://localhost:5556/ for a Flower instance connected to Checkmate's RabbitMQ
+* http://localhost:5557/ for a Flower instance connected to LMS's RabbitMQ
+
+Each of these Flower instances will ask you to log in with the same HTTP basic auth username and password, which you'll find in 1Password.
+
+In staging and production h, Checkmate and LMS all share a single RabbitMQ instance so there's only one Flower instance at <https://flower.hypothes.is> (<https://flower.staging.hypothes.is> for staging).
+There are separate RabbitMQ  and Flower instances for Canada, however: <https://flower.ca.hypothes.is>.
 
 ## Changing the Project's Python Version
 
