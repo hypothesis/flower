@@ -1,7 +1,8 @@
 {
   "programs": {
     "flower": {
-        "command": "celery --broker='%(ENV_BROKER_URL)s' flower --port=5555"
+        "command": "celery flower",
+        "environment": "FLOWER_BROKER_URL='%(ENV_BROKER_URL)s',FLOWER_PORT='5555',FLOWER_OAUTH2_REDIRECT_URI=http://localhost:5555/login"
     }
   }
 }

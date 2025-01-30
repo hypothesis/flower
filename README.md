@@ -28,6 +28,7 @@ Then to set up your development environment:
 ```terminal
 git clone https://github.com/hypothesis/flower.git
 cd flower
+make devdata
 make help
 ```
 

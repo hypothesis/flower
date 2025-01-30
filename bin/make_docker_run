@@ -2,4 +2,5 @@
 docker run \
     --add-host host.docker.internal:host-gateway \
     --env-file .docker.env \
+    --env-file .devdata.env \
     hypothesis/flower:dev

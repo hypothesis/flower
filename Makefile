@@ -7,6 +7,9 @@ $(call help,make help,print this help message)
 .PHONY: services
 
 .PHONY: devdata
+$(call help,make devdata,load development data and environment variables)
+devdata: python
+	@tox -qe dev --run-command 'python bin/make_devdata'
 
 .PHONY: dev
 $(call help,make dev,run the whole app \(all workers\))
