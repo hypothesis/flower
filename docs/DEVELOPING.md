@@ -1,4 +1,4 @@
-# Setting up Your Flower Development Environment
+# Setting up Your _Flower_ Development Environment
 
 First you'll need to install:
 
@@ -35,15 +35,16 @@ instances:
 Each of these Flower instances will ask you to log in with the same HTTP basic
 auth username and password, which you'll find in 1Password.
 
-Of course if you want to actually see any data in these Flower instances,
+Of course if you want to actually see any data in these Flower instances
 you need to also run the development environments for
 [h](https://github.com/hypothesis/h),
 [Checkmate](https://github.com/hypothesis/checkmate) and
-[LMS](https://github.com/hypothesis/lms).
+[LMS](https://github.com/hypothesis/lms) locally.
 
 In staging and production h, Checkmate and LMS all share a single RabbitMQ
-instance so there's only one Flower instance at <https://flower.hypothes.is>
-(staging instance: <https://flower.staging.hypothes.is>).
+instance so there's only one production Flower instance at
+<https://flower.hypothes.is> (staging instance:
+<https://flower.staging.hypothes.is>).
 
 There *are* separate RabbitMQ  and Flower instances for Canada, however:
 <https://flower.ca.hypothes.is>.
