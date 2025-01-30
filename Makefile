@@ -16,62 +16,6 @@ $(call help,make dev,run the whole app \(all workers\))
 dev: python
 	@pyenv exec tox -qe dev
 
-.PHONY: shell
-$(call help,make shell,"launch a Python shell in this project's virtualenv")
-shell: python
-	@pyenv exec tox -qe dev --run-command 'ipython'
-
-.PHONY: lint
-$(call help,make lint,"lint the code and print any warnings")
-lint: python
-	@pyenv exec tox -qe lint
-
-.PHONY: fix
-$(call help,make fix,"apply fixes to resolve lint violations")
-fix: python
-	@pyenv exec tox -qe lint -- ruff check --fix-only flower tests bin
-
-.PHONY: noqa
-$(call help,make noqa,"add noqa comments to suppress lint violations")
-noqa: python
-	@pyenv exec tox -qe lint -- ruff check --add-noqa flower tests bin
-
-.PHONY: typecheck
-$(call help,make typecheck,"type check the code and print any warnings")
-typecheck: python
-	@pyenv exec tox -qe typecheck
-
-.PHONY: format
-$(call help,make format,"format the code")
-format: python
-	@pyenv exec tox -qe format
-
-.PHONY: checkformatting
-$(call help,make checkformatting,"crash if the code isn't correctly formatted")
-checkformatting: python
-	@pyenv exec tox -qe checkformatting
-
-.PHONY: test
-$(call help,make test,"run the unit tests")
-test: python
-	@pyenv exec tox -qe tests
-
-.PHONY: coverage
-$(call help,make coverage,"run the tests and print the coverage report")
-coverage: python
-	@pyenv exec tox -qe 'tests,coverage'
-
-.PHONY: functests
-$(call help,make functests,"run the functional tests")
-functests: python
-	@pyenv exec tox -qe functests
-
-.PHONY: sure
-$(call help,make sure,"make sure that the formatting$(comma) linting and tests all pass")
-sure: python
-sure:
-	@pyenv exec tox --parallel -qe 'checkformatting,lint,typecheck,tests,coverage,functests'
-
 # Tell make how to compile requirements/*.txt files.
 #
 # `touch` is used to pre-create an empty requirements/%.txt file if none
@@ -92,10 +36,6 @@ requirements/%.txt: requirements/%.in python
 # knows what order to re-compile them in and knows to re-compile a file if a
 # file that it depends on has been changed.
 requirements/dev.txt: requirements/prod.txt
-requirements/tests.txt: requirements/prod.txt
-requirements/functests.txt: requirements/prod.txt
-requirements/lint.txt: requirements/tests.txt requirements/functests.txt
-requirements/typecheck.txt: requirements/prod.txt
 
 # Add a requirements target so you can just run `make requirements` to
 # re-compile *all* the requirements files at once.
@@ -136,5 +76,3 @@ clean:
 .PHONY: python
 python:
 	@bin/make_python
-
--include flower.mk

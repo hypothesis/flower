@@ -1,6 +1,0 @@
--r prod.txt
-
-pip-tools
-pip-sync-faster
-
-mypy

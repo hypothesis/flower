@@ -2,7 +2,22 @@
   "template": "https://github.com/hypothesis/cookiecutters",
   "checkout": null,
   "directory": "pyapp",
-  "ignore": [],
+  "ignore": [
+    ".github/workflows/ci.yml",
+    ".github/workflows/keepalive.yml",
+    "pyproject.toml",
+    "requirements/checkformatting.*",
+    "requirements/coverage.*",
+    "requirements/format.*",
+    "requirements/functests.*",
+    "requirements/lint.*",
+    "requirements/tests.*",
+    "requirements/typecheck.*",
+    "Makefile",
+    "tox.ini",
+    "flower/*",
+    "tests/*"
+  ],
   "extra_context": {
     "name": "Flower",
     "package_name": "flower",
