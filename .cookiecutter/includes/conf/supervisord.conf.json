@@ -1,0 +1,8 @@
+{
+  "programs": {
+    "flower": {
+        "command": "celery flower"
+    }
+  }
+}
+
