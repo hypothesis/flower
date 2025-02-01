@@ -56,7 +56,7 @@ humanize==4.11.0
     #   flower
 importlib-metadata==8.6.1
     # via pip-sync-faster
-ipython==8.31.0
+ipython==8.32.0
     # via -r requirements/dev.in
 jedi==0.19.2
     # via ipython
