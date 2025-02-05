@@ -16,6 +16,7 @@ RUN apk add --no-cache --virtual \
 
 COPY . .
 
+EXPOSE 43508
 
 USER hypothesis
 
